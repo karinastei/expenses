@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import './App.css';
 
 import ExpenseItem from "./components/ExpenseItem";
@@ -12,8 +11,8 @@ function App() {
         },
         {
             date: new Date(2023, 0, 5),
-            title:'Icecream',
-            price: 3.99
+            title:'New product',
+            price: 99.99
         }
     ]
 
