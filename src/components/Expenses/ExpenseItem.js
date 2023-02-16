@@ -1,11 +1,14 @@
 import './ExpenseItem.css'
 import ExpenseDate from "./ExpenseDate";
 import ExpenseItemContainer from "../UserInterface/ExpenseItemContainer";
+import React, { useState } from 'react';
 
 const ExpenseItem = (props) => {
+    const [title, setTitle] = useState(props.expenseData.title)
 
     const clickHandler = () => {
-        console.log('"Change Title" button was clicked!');
+        setTitle('Updated title const')
+        console.log(title)
     }
 
     return (
