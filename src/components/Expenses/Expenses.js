@@ -13,8 +13,8 @@ function Expenses(props) {
         <ExpenseItemContainer className="expenses">
             <ExpensesFilter onSaveFilterData={filterExpenseDataHandler}></ExpensesFilter>
             {
-                props.expenseData.map((expense) => {
-                    return <ExpenseItem expenseData={expense}></ExpenseItem>
+                props.expenseData.map((expenses) => {
+                    return <ExpenseItem expenseData={expenses}></ExpenseItem>
                 })
             }
         </ExpenseItemContainer>
