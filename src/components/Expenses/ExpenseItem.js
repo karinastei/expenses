@@ -1,7 +1,7 @@
 import './ExpenseItem.css'
 import ExpenseDate from "./ExpenseDate";
 import ExpenseItemContainer from "../UserInterface/ExpenseItemContainer";
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const ExpenseItem = (props) => {
     const [title, setTitle] = useState(props.expenseData.title)

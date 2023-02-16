@@ -1,8 +1,8 @@
 import './ExpenseItemContainer.css'
 
-function ExpenseItemContainer(props){
+function ExpenseItemContainer(props) {
     const classes = 'ExpenseItemContainer ' + props.className
-    return(
+    return (
         <div className={classes}>{props.children}</div>
     )
 }
