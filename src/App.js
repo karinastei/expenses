@@ -11,31 +11,27 @@ const DUMMY_EXPENSES = [
     },
     {
         date: new Date(2023, 0, 10),
-        title: 'New product',
+        title: 'New jeans',
         price: 99.99
-    },
-    {
-        date: new Date(2023, 0, 10),
-        title: 'New thing',
-        price: 999.99
     }
 ]
 
 const App = () => {
-    const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+    const [expenses, setExpenses] = useState
+    (DUMMY_EXPENSES)
 
-    const expenseHandler = (expenseData) => {
-        console.log('This is happening inside App.js')
+    const addExpenseHandler = (expense) => {
+        console.log('In App.js')
         setExpenses((previousExpenses) => {
-            return [expenseData, ...previousExpenses]
+            return [expense, ...previousExpenses]
         })
     }
 
-    console.log('expenses:', expenses)
+    console.log(expenses)
 
     return (
         <div className="App">
-            <NewExpense onAddExpense={expenseHandler}></NewExpense>
+            <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
             <Expenses expenseData={DUMMY_EXPENSES}></Expenses>
         </div>
     );
