@@ -12,8 +12,11 @@ function Expenses(props) {
     return (
         <ExpenseItemContainer className="expenses">
             <ExpensesFilter onSaveFilterData={filterExpenseDataHandler}></ExpensesFilter>
-            <ExpenseItem expenseData={props.expenses[0]}></ExpenseItem>
-            <ExpenseItem expenseData={props.expenses[1]}></ExpenseItem>
+            {
+                props.expenseData.map((expense) => {
+                    return <ExpenseItem expenseData={expense}></ExpenseItem>
+                })
+            }
         </ExpenseItemContainer>
     )
 }
