@@ -5,25 +5,44 @@ import {useState} from "react";
 
 const DUMMY_EXPENSES = [
     {
-        date: new Date(2023, 0, 10),
-        title: 'New book',
+        id: 'e1',
+        date: new Date(2023, 1, 1),
+        title: 'Old book',
         price: 30.99
     },
     {
-        date: new Date(2023, 0, 10),
+        id: 'e2',
+        date: new Date(2024, 2, 2),
+        title: 'Old book',
+        price: 35.99
+    },
+    {
+        id: 'e3',
+        date: new Date(2023, 3, 3),
+        title: 'Old jeans',
+        price: 51.99
+    },
+    {
+        id: 'e4',
+        date: new Date(2024, 4, 4),
         title: 'New jeans',
-        price: 99.99
+        price: 68.86
+    },
+    {
+        id: 'e5',
+        date: new Date(2025, 5, 5),
+        title: 'Playstation 5',
+        price: 599.99
     }
 ]
 
 const App = () => {
-    const [expenses, setExpenses] = useState
-    (DUMMY_EXPENSES)
+    const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 
-    const addExpenseHandler = (expense) => {
+    const addExpenseHandler = (expenseData) => {
         console.log('In App.js')
         setExpenses((previousExpenses) => {
-            return [expense, ...previousExpenses]
+            return [expenseData, ...previousExpenses]
         })
     }
 
@@ -32,9 +51,10 @@ const App = () => {
     return (
         <div className="App">
             <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-            <Expenses expenseData={DUMMY_EXPENSES}></Expenses>
+            <Expenses expenseData={expenses}></Expenses>
         </div>
     );
 }
 
 export default App;
+

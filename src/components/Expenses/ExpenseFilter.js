@@ -1,22 +1,23 @@
 import React, {useEffect, useState} from 'react';
 
-import './ExpensesFilter.css';
+import './ExpenseFilter.css';
 
-const ExpensesFilter = (props) => {
+const ExpenseFilter = (props) => {
 
-    const [year, setYear] = useState('2023');
+    const [year, setYear] = useState(2023);
+
     const yearChangeHandler = (event) => {
         console.log(`Year changed to ${event.target.value} by ExpenseFilter.js`)
         setYear(event.target.value)
-    }
+    };
 
     useEffect(() => {
         const filterData = {
-            year: year
+            year: parseInt(year)
         }
         console.log(filterData)
         props.onSaveFilterData(filterData)
-    }, [year])
+    }, [props, year])
 
     return (
         <div className='expenses-filter'>
@@ -32,4 +33,4 @@ const ExpensesFilter = (props) => {
     );
 };
 
-export default ExpensesFilter;
+export default ExpenseFilter;
