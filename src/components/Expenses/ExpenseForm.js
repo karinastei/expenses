@@ -31,6 +31,9 @@ const ExpenseForm = (props) => {
         setEnteredAmount('')
         setEnteredDate('')
     }
+    const toggleMenu = (menuState) => {
+        props.toggleMenu(menuState);
+    }
 
     return(
         <form onSubmit={submitHandler}>
@@ -51,6 +54,10 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__actions">
             <button type="submit">Add Expense</button>
+            <button onClick={() => toggleMenu('unusable')}>
+                Cancel
+            </button>
+
         </div>
     </form>)
 }
