@@ -30,7 +30,7 @@ const DUMMY_EXPENSES = [
     },
     {
         id: 'e5',
-        date: new Date(2025, 5, 5),
+        date: new Date(2023, 5, 5),
         title: 'Playstation 5',
         price: 599.99
     }
