@@ -15,16 +15,16 @@ const Expenses = (props) => {
 
     return (
         <Card className="expenses">
-            <ExpenseFilter onSaveFilterData={expensesDataHandler} />
+            <ExpenseFilter onSaveFilterData={expensesDataHandler}/>
             {expenseElement.length === 0
                 && <p className="errorHandler">No expenses found</p>}
             {expenseElement.length > 0 &&
                 expenseElement.map(expense => (
                     <ExpenseItem key={expense.id}
-                        id={expense.id}
-                        title={expense.title}
-                        price={expense.price}
-                        date={expense.date}
+                                 id={expense.id}
+                                 title={expense.title}
+                                 price={expense.price}
+                                 date={expense.date}
                     />
                 ))}
         </Card>

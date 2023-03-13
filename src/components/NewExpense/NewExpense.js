@@ -12,28 +12,18 @@ const NewExpense = (props) => {
         }
         props.onAddExpense(expenseData)
     }
-    const [usability, setUsability] = useState('unusable')
+    const [usability, setUsability] = useState('Closed')
 
-    const toggleMenu = (menuState) => {setUsability(menuState)
+    const toggleMenu = (menuState) => {
+        setUsability(menuState)
         return usability
     }
 
     return (
         <div className="new-expense">
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}></ExpenseForm>
-            {usability === 'unusable' && (
-                <button onClick={() => toggleMenu('usable')}>
-                    Add new Expense
-                </button>
-            )}
-
-            {usability === 'usable' && (
-                <ExpenseForm
-                    onSaveExpenseData = {saveExpenseDataHandler}
-                    toggleMenu = {toggleMenu}
-                />
-            )}
-
+            {usability === 'Closed' && <button onClick={() => toggleMenu('Open')}>Add new Expense</button>}
+            {usability === 'Open' &&
+                <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} toggleMenu={toggleMenu}></ExpenseForm>}
         </div>
     )
 }

@@ -3,7 +3,7 @@ import "./ExpenseForm.css"
 const ExpenseForm = (props) => {
 
     const [enteredTitle, setEnteredTitle] = useState('')
-    const [enteredprice, setEnteredprice] = useState('')
+    const [enteredPrice, setEnteredPrice] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
 
     const titleChangeHandler = (event) => {
@@ -11,7 +11,7 @@ const ExpenseForm = (props) => {
         console.log('Setting entered title');
     }
     const priceChangeHandler = (event) => {
-        setEnteredprice(event.target.value)
+        setEnteredPrice(event.target.value)
         console.log('Setting entered price');
     }
     const dateChangeHandler = (event) => {
@@ -22,13 +22,13 @@ const ExpenseForm = (props) => {
         event.preventDefault()
         const expenseData = {
             title: enteredTitle,
-            price: enteredprice,
+            price: enteredPrice,
             date: new Date(enteredDate)
         }
         props.onSaveExpenseData(expenseData)
         console.log('expenseData:', expenseData)
         setEnteredTitle('')
-        setEnteredprice('')
+        setEnteredPrice('')
         setEnteredDate('')
     }
     const toggleMenu = (menuState) => {
@@ -45,7 +45,7 @@ const ExpenseForm = (props) => {
             </div>
             <div className="new-expense__control">
                 <label>price</label>
-                <input type="number" min="0.01" step="0.01" onChange={priceChangeHandler} value={enteredprice}/>
+                <input type="number" min="0.01" step="0.01" onChange={priceChangeHandler} value={enteredPrice}/>
             </div>
             <div className="new-expense__control">
                 <label>Date</label>
@@ -53,11 +53,8 @@ const ExpenseForm = (props) => {
             </div>
         </div>
         <div className="new-expense__actions">
-            <button type="submit">Add Expense</button>
-            <button onClick={() => toggleMenu('unusable')}>
-                Cancel
-            </button>
-
+            <button type="submit" >Add Expense</button>
+            <button onClick={() => toggleMenu('Closed')}>Cancel</button>
         </div>
     </form>)
 }
