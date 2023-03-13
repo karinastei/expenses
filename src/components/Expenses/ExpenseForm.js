@@ -3,16 +3,16 @@ import "./ExpenseForm.css"
 const ExpenseForm = (props) => {
 
     const [enteredTitle, setEnteredTitle] = useState('')
-    const [enteredAmount, setEnteredAmount] = useState('')
+    const [enteredprice, setEnteredprice] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
 
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
         console.log('Setting entered title');
     }
-    const amountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value)
-        console.log('Setting entered amount');
+    const priceChangeHandler = (event) => {
+        setEnteredprice(event.target.value)
+        console.log('Setting entered price');
     }
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value)
@@ -22,13 +22,13 @@ const ExpenseForm = (props) => {
         event.preventDefault()
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            price: enteredprice,
             date: new Date(enteredDate)
         }
         props.onSaveExpenseData(expenseData)
         console.log('expenseData:', expenseData)
         setEnteredTitle('')
-        setEnteredAmount('')
+        setEnteredprice('')
         setEnteredDate('')
     }
     const toggleMenu = (menuState) => {
@@ -44,8 +44,8 @@ const ExpenseForm = (props) => {
                        onChange={titleChangeHandler} value={enteredTitle}/>
             </div>
             <div className="new-expense__control">
-                <label>Amount</label>
-                <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler} value={enteredAmount}/>
+                <label>price</label>
+                <input type="number" min="0.01" step="0.01" onChange={priceChangeHandler} value={enteredprice}/>
             </div>
             <div className="new-expense__control">
                 <label>Date</label>
