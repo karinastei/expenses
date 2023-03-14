@@ -1,5 +1,5 @@
 module.exports = {
-  projectId: "nc3bv8",
+  projectId: "9bf66m",
   // The rest of the Cypress config options go here...
 }
 const { defineConfig } = require("cypress");
